@@ -2,7 +2,7 @@
 set -e
 
 current="$(curl https://api.github.com/repos/mautic/mautic/releases/latest -s | jq -r .name)"
-current = echo $current | sed 's/Mautic Community //g'
+current="$(echo $current | sed 's/Mautic Community //g')"
 
 echo "Mautic version is: $current"
 
