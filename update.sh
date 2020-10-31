@@ -2,6 +2,9 @@
 set -e
 
 current="$(curl https://api.github.com/repos/mautic/mautic/releases/latest -s | jq -r .name)"
+current = echo $current | sed 's/Mautic Community //g'
+
+echo "Mautic version is: $current"
 
 # TODO - Expose SHA signatures for the packages somewhere
 wget -O mautic.zip https://github.com/mautic/mautic/releases/download/$current/$current.zip
