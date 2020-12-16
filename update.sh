@@ -1,8 +1,13 @@
 #!/bin/bash
 set -e
 
-current="$(curl https://api.github.com/repos/mautic/mautic/releases/latest -s | jq -r .name)"
-current="$(echo $current | sed 's/Mautic Community //g')"
+## we have disabled both command. because we faced a issue when we are upgrading mautic version to 3.2.1 and in mautic relases notes it showing latest version for mautic is available is 2.16.4. so. that's why we decided to use static version to ignore this ERROR.
+# REF: https://github.com/mautic/mautic/releases/latest
+#current="$(curl https://api.github.com/repos/mautic/mautic/releases/latest -s | jq -r .name)"
+#current="$(echo $current | sed 's/Mautic Community //g')"
+
+# mautic version
+current=3.2.1
 
 echo "Mautic version is: $current"
 
