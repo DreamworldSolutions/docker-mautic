@@ -7,7 +7,7 @@ set -e
 #current="$(echo $current | sed 's/Mautic Community //g')"
 
 # mautic version
-current=4.4.5
+current=4.4.7
 
 echo "Mautic version is: $current"
 
